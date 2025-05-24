@@ -58,10 +58,16 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="#contact"
-              className="btn bg-gradient-to-r from-btn-gradient-from to-btn-gradient-to text-white"
+              href="/signin"
+              className="btn border-2 border-btn-gradient-from text-btn-gradient-from font-bold text-sm px-5 py-2 mr-2 hover:bg-btn-gradient-from hover:text-white"
             >
-              Get Started
+              Sign In
+            </a>
+            <a
+              href="/signup"
+              className="btn bg-gradient-to-r from-btn-gradient-from to-btn-gradient-to text-white font-bold text-sm px-5 py-2"
+            >
+              Sign Up
             </a>
           </div>
 
@@ -103,11 +109,18 @@ const Navbar = () => {
             </a>
           ))}
           <a
-            href="#contact"
-            className="block w-full text-center btn bg-gradient-to-r from-btn-gradient-from to-btn-gradient-to text-white mt-4"
+            href="/signin"
+            className="block w-full text-center btn border-2 border-btn-gradient-from text-btn-gradient-from font-bold text-sm px-5 py-2 mr-2 hover:bg-btn-gradient-from hover:text-white mt-4"
             onClick={() => setIsOpen(false)}
           >
-            Get Started
+            Sign In
+          </a>
+          <a
+            href="/signup"
+            className="block w-full text-center btn bg-gradient-to-r from-btn-gradient-from to-btn-gradient-to text-white font-bold text-sm px-5 py-2 mt-4"
+            onClick={() => setIsOpen(false)}
+          >
+            Sign Up
           </a>
         </div>
       </motion.div>

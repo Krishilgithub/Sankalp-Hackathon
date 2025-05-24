@@ -12,6 +12,7 @@ const Contact = () => {
     email: "",
     subject: "",
     message: "",
+    phone: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,7 +28,7 @@ const Contact = () => {
       // Here you would typically make an API call to your backend
       await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulated API call
       setSubmitStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
+      setFormData({ name: "", email: "", subject: "", message: "", phone: "" });
     } catch (error) {
       setSubmitStatus("error");
     } finally {
@@ -72,7 +73,7 @@ const Contact = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-4xl sm:text-5xl font-bold text-dark mb-4"
+            className="text-4xl sm:text-5xl font-bold text-dark mb-4 hover:scale-105 hover:drop-shadow-lg transition-transform duration-200"
           >
             Get in Touch
           </motion.h1>
@@ -110,6 +111,24 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  className="input mt-1"
+                />
+              </div>
+
+              <div>
+                <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone || ""}
+                  onChange={handleChange}
+                  pattern="[0-9\-\+\s\(\)]*"
                   className="input mt-1"
                 />
               </div>
@@ -171,7 +190,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className={`w-full btn btn-primary ${
+                className={`w-full btn btn-primary hover:scale-105 hover:shadow-lg transition-transform duration-200 ${
                   isSubmitting ? "opacity-75 cursor-not-allowed" : ""
                 }`}
               >
