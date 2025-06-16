@@ -1,54 +1,54 @@
-import { motion } from 'framer-motion';
-import { CheckIcon } from '@heroicons/react/24/solid';
+import { motion } from "framer-motion";
+import { CheckIcon } from "@heroicons/react/24/solid";
 
 const plans = [
   {
-    name: 'Free',
-    price: '$0',
-    description: 'Perfect for trying out EventSync Pro',
+    name: "Free",
+    price: "$0",
+    description: "Perfect for trying out EventSync AI",
     features: [
-      'Up to 3 events per month',
-      'Basic scheduling features',
-      'Email notifications',
-      'Calendar integration',
-      'Basic analytics',
+      "Up to 3 events per month",
+      "Basic scheduling features",
+      "Email notifications",
+      "Calendar integration",
+      "Basic analytics",
     ],
-    cta: 'Get Started',
+    cta: "Get Started",
     popular: false,
   },
   {
-    name: 'Pro',
-    price: '$15',
-    period: '/month',
-    description: 'Best for growing teams and businesses',
+    name: "Pro",
+    price: "$15",
+    period: "/month",
+    description: "Best for growing teams and businesses",
     features: [
-      'Unlimited events',
-      'Advanced scheduling',
-      'AI-powered suggestions',
-      'Custom branding',
-      'Advanced analytics',
-      'Priority support',
-      'Team collaboration',
-      'API access',
+      "Unlimited events",
+      "Advanced scheduling",
+      "AI-powered suggestions",
+      "Custom branding",
+      "Advanced analytics",
+      "Priority support",
+      "Team collaboration",
+      "API access",
     ],
-    cta: 'Start Free Trial',
+    cta: "Start Free Trial",
     popular: true,
   },
   {
-    name: 'Enterprise',
-    price: 'Custom',
-    description: 'For large organizations with specific needs',
+    name: "Enterprise",
+    price: "Custom",
+    description: "For large organizations with specific needs",
     features: [
-      'Everything in Pro',
-      'Custom integrations',
-      'Dedicated support',
-      'SLA guarantee',
-      'Custom reporting',
-      'Advanced security',
-      'Training sessions',
-      'Custom development',
+      "Everything in Pro",
+      "Custom integrations",
+      "Dedicated support",
+      "SLA guarantee",
+      "Custom reporting",
+      "Advanced security",
+      "Training sessions",
+      "Custom development",
     ],
-    cta: 'Contact Sales',
+    cta: "Contact Sales",
     popular: false,
   },
 ];
@@ -73,7 +73,8 @@ const Pricing = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-xl text-gray-600 max-w-3xl mx-auto"
           >
-            Choose the perfect plan for your needs. All plans include a 14-day free trial.
+            Choose the perfect plan for your needs. All plans include a 14-day
+            free trial.
           </motion.p>
         </div>
 
@@ -87,8 +88,8 @@ const Pricing = () => {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`card hover-scale ${
                 plan.popular
-                  ? 'border-2 border-primary relative'
-                  : 'border border-gray-200'
+                  ? "border-2 border-primary relative"
+                  : "border border-gray-200"
               }`}
             >
               {plan.popular && (
@@ -100,9 +101,13 @@ const Pricing = () => {
               )}
 
               <div className="text-center">
-                <h3 className="text-2xl font-bold text-dark mb-2">{plan.name}</h3>
+                <h3 className="text-2xl font-bold text-dark mb-2">
+                  {plan.name}
+                </h3>
                 <div className="flex items-baseline justify-center mb-4">
-                  <span className="text-4xl font-bold text-dark">{plan.price}</span>
+                  <span className="text-4xl font-bold text-dark">
+                    {plan.price}
+                  </span>
                   {plan.period && (
                     <span className="text-gray-500 ml-1">{plan.period}</span>
                   )}
@@ -122,8 +127,8 @@ const Pricing = () => {
               <button
                 className={`w-full btn ${
                   plan.popular
-                    ? 'btn-primary'
-                    : 'bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white'
+                    ? "btn-primary"
+                    : "bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white"
                 }`}
               >
                 {plan.cta}
@@ -145,20 +150,24 @@ const Pricing = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[
               {
-                question: 'Can I change plans later?',
-                answer: 'Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.',
+                question: "Can I change plans later?",
+                answer:
+                  "Yes, you can upgrade or downgrade your plan at any time. Changes will be reflected in your next billing cycle.",
               },
               {
-                question: 'What payment methods do you accept?',
-                answer: 'We accept all major credit cards, PayPal, and bank transfers for annual plans.',
+                question: "What payment methods do you accept?",
+                answer:
+                  "We accept all major credit cards, PayPal, and bank transfers for annual plans.",
               },
               {
-                question: 'Is there a long-term contract?',
-                answer: 'No, all plans are billed monthly and you can cancel at any time.',
+                question: "Is there a long-term contract?",
+                answer:
+                  "No, all plans are billed monthly and you can cancel at any time.",
               },
               {
-                question: 'Do you offer refunds?',
-                answer: 'Yes, we offer a 14-day money-back guarantee if you\'re not satisfied with our service.',
+                question: "Do you offer refunds?",
+                answer:
+                  "Yes, we offer a 14-day money-back guarantee if you're not satisfied with our service.",
               },
             ].map((faq, index) => (
               <motion.div
@@ -188,10 +197,7 @@ const Pricing = () => {
           <p className="text-lg text-gray-600 mb-8">
             Our team is here to help you choose the right plan
           </p>
-          <a
-            href="/contact"
-            className="btn btn-primary inline-block"
-          >
+          <a href="/contact" className="btn btn-primary inline-block">
             Contact Sales
           </a>
         </motion.div>
@@ -200,4 +206,4 @@ const Pricing = () => {
   );
 };
 
-export default Pricing; 
+export default Pricing;

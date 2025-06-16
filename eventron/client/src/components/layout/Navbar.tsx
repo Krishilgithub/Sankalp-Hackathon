@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const Logo = () => (
-  <img src="/eventron-logo.svg" alt="Eventron Logo" className="h-8 w-8 mr-2" />
+  <img src="/eventron-logo.svg" alt="EventSync AI Logo" className="h-8 w-8 mr-2" />
 );
 
 const Navbar = () => {
@@ -42,7 +42,7 @@ const Navbar = () => {
           <Link to="/" className="flex items-center">
             <Logo />
             <span className="text-2xl font-bold bg-gradient-to-r from-brand-gradient-from to-brand-gradient-to bg-clip-text text-transparent">
-              Eventron
+              EventSync AI
             </span>
           </Link>
 

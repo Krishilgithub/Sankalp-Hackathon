@@ -1,6 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function Signin() {
+  const [form, setForm] = useState({ email: "", password: "" });
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const user = JSON.parse(localStorage.getItem("eventsyncai_signup") || "{}");
+    if (user.email === form.email && user.password === form.password) {
+      setError("");
+      navigate("/dashboard");
+    } else {
+      setError("Invalid credentials");
+    }
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="card bg-card max-w-md w-full p-8">
@@ -21,6 +41,8 @@ export default function Signin() {
               name="email"
               required
               className="input"
+              value={form.email}
+              onChange={handleChange}
             />
           </div>
           <div>
@@ -36,6 +58,8 @@ export default function Signin() {
               name="password"
               required
               className="input"
+              value={form.password}
+              onChange={handleChange}
             />
           </div>
           <button

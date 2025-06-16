@@ -110,7 +110,7 @@ const Footer = () => {
               ))}
             </div>
             <p className="mt-8 md:mt-0 text-base text-gray-400">
-              &copy; {currentYear} Eventron. All rights reserved.
+              &copy; {currentYear} EventSync AI. All rights reserved.
             </p>
           </div>
         </div>

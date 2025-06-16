@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 export default function Signup() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [success, setSuccess] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -11,9 +12,10 @@ export default function Signup() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    localStorage.setItem("eventron_signup", JSON.stringify(form));
+    localStorage.setItem("eventsyncai_signup", JSON.stringify(form));
     setForm({ name: "", email: "", password: "" });
     setSuccess(true);
+    setTimeout(() => navigate("/dashboard"), 500);
   };
 
   return (
@@ -81,7 +83,9 @@ export default function Signup() {
             Sign Up
           </button>
           {success && (
-            <p className="text-green-600 text-center mt-2">Sign up details saved locally!</p>
+            <p className="text-green-600 text-center mt-2">
+              Sign up details saved locally!
+            </p>
           )}
         </form>
         <p className="mt-6 text-center text-secondary">

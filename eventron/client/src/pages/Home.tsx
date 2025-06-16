@@ -121,7 +121,7 @@ const plans = [
   {
     name: "Free",
     price: "$0",
-    description: "Perfect for trying out Eventron",
+    description: "Perfect for trying out EventSync AI",
     features: [
       "Up to 3 events per month",
       "Basic scheduling features",
@@ -217,7 +217,7 @@ const Home = () => {
           className="flex-1 flex flex-col items-center justify-center lg:items-start lg:text-left"
         >
           <h1 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-brand-gradient-from to-brand-gradient-to bg-clip-text text-transparent text-center">
-            Eventron
+            EventSync AI
           </h1>
           <p className="text-xl text-secondary mb-8 max-w-2xl mx-auto lg:mx-0">
             AI-powered scheduling, reminders, and analytics for seamless events

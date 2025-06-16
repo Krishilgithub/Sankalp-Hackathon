@@ -1,4 +1,4 @@
-import { useState } from "react";
+giimport { useState } from "react";
 import { motion } from "framer-motion";
 import {
   EnvelopeIcon,
@@ -47,8 +47,8 @@ const Contact = () => {
     {
       icon: EnvelopeIcon,
       title: "Email",
-      content: "support@eventron.com",
-      link: "mailto:support@eventron.com",
+      content: "support@eventsyncai.com",
+      link: "mailto:support@eventsyncai.com",
     },
     {
       icon: PhoneIcon,
