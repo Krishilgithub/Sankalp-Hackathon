@@ -193,7 +193,7 @@ const Dashboard = () => {
   return (
     <div
       className={`min-h-screen w-full ${
-        dark ? "bg-gray-900" : "bg-blue-50"
+        dark ? "bg-gray-900" : "bg-blue-900"
       } transition-colors duration-700`}
     >
       {/* Header */}
@@ -363,7 +363,7 @@ const Dashboard = () => {
             {reminders.length === 0 ? (
               <div className="text-gray-400">No reminders yet.</div>
             ) : (
-              reminders.map((rem, i) => (
+              reminders.map((rem: any, i: any) => (
                 <div
                   key={i}
                   className="bg-blue-50 dark:bg-gray-900 border-l-4 border-gold-400 p-2 my-2 rounded shadow-sm text-blue-900 dark:text-white animate-fade-in"
