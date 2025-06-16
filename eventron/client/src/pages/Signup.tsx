@@ -1,13 +1,28 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 export default function Signup() {
+  const [form, setForm] = useState({ name: "", email: "", password: "" });
+  const [success, setSuccess] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    localStorage.setItem("eventron_signup", JSON.stringify(form));
+    setForm({ name: "", email: "", password: "" });
+    setSuccess(true);
+  };
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-background">
       <div className="card bg-card max-w-md w-full p-8">
         <h2 className="text-4xl font-bold bg-gradient-to-r from-brand-gradient-from to-brand-gradient-to bg-clip-text text-transparent mb-6 text-center">
           Sign Up
         </h2>
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
             <label
               htmlFor="name"
@@ -21,6 +36,8 @@ export default function Signup() {
               name="name"
               required
               className="input"
+              value={form.name}
+              onChange={handleChange}
             />
           </div>
           <div>
@@ -36,6 +53,8 @@ export default function Signup() {
               name="email"
               required
               className="input"
+              value={form.email}
+              onChange={handleChange}
             />
           </div>
           <div>
@@ -51,6 +70,8 @@ export default function Signup() {
               name="password"
               required
               className="input"
+              value={form.password}
+              onChange={handleChange}
             />
           </div>
           <button
@@ -59,6 +80,9 @@ export default function Signup() {
           >
             Sign Up
           </button>
+          {success && (
+            <p className="text-green-600 text-center mt-2">Sign up details saved locally!</p>
+          )}
         </form>
         <p className="mt-6 text-center text-secondary">
           Already have an account?{" "}
